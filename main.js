@@ -168,6 +168,11 @@ createApp({
     ]  ,
     activeContact: 0,
         }
+    },
+    methods : {
+        goTo(index){
+            this.activeContact = index;
+        }
     }
 }).mount("#app");
 
