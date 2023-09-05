@@ -45,12 +45,14 @@
                     <i class="fa-solid fa-magnifying-glass fa-sm"></i>        
                 </div>
                 <div>
-                    <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" style="width: 100%;">
+                    <input id="search" class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" style="width: 100%;" v-model="search" @keyup="searchName()">
                 </div>
             </div>
             <div class="overflow">
-                <div @click="goTo(index)" v-for="(contact, index) in contacts" :class="(index == activeContact) ? 'active' : ''" class="d-flex contact">
-                    <img   class="avatar" :src="contact.avatar" alt="">
+                
+                <div @click="goTo(index)" v-for="(contact, index) in contacts"  >
+                    <div v-if="contact.visible" :class="(index == activeContact) ? 'active' : ''" class="d-flex contact">
+                        <img   class="avatar" :src="contact.avatar" alt="">
                     <div class="ms-3">
                         <h6>{{ contact.name }}</h6>
                         <span>Ultimo messaggio inviato</span>
@@ -58,6 +60,8 @@
                     <div>
                         <span class="time">12:00</span>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

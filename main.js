@@ -171,7 +171,9 @@ createApp({
         date : "",
         message : "",
         status : "sent",
-    }
+    },
+
+    search : "",
         }
     },
     methods : {
@@ -191,7 +193,20 @@ createApp({
                 }
                 this.contacts[this.activeContact].messages.push(answer);
             },1000)
+        },
+        searchName(){
+            
+            for(let i = 0; i < this.contacts.length; i++){
+                if(this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
+                    this.contacts[i].visible = true;
+                    console.log("si");
+                }
+                else{
+                    this.contacts[i].visible = false;
+                }
+            }
         }
+        
     }
 }).mount("#app");
 
