@@ -167,11 +167,30 @@ createApp({
     }
     ]  ,
     activeContact: 0,
+    newMessage : {
+        date : "",
+        message : "",
+        status : "sent",
+    }
         }
     },
     methods : {
         goTo(index){
             this.activeContact = index;
+        },
+        sendNewMessage(){
+            const newMessageCopy = {...this.newMessage};
+            this.contacts[this.activeContact].messages.push(newMessageCopy);
+            this.newMessage.message = "";
+
+            setTimeout(() => {
+                const answer = {
+                    date: "",
+                    message: "ok",
+                    status: "received",
+                }
+                this.contacts[this.activeContact].messages.push(answer);
+            },1000)
         }
     }
 }).mount("#app");

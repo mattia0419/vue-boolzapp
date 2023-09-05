@@ -111,6 +111,7 @@ img{
     cursor: pointer;
     padding-top: 6px;
     height: 65px;
+    position: relative;
 }
 .contact span{
     font-size: 12px;
@@ -122,9 +123,9 @@ img{
     height: 508px;
 }
 .time{
-    position: relative;
-    left: 25px;
-    bottom: 40px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
 }
 .other-profile{
     line-height: 0;
@@ -159,4 +160,20 @@ img{
     padding: 8px;
     border-radius: 10px;
     border: transparent;
+}
+.sent{
+    width: 170px;
+    border-radius: 12px;
+    padding: 6px;
+    background-color: #D5F9BA; 
+    align-self: flex-end;
+    margin-bottom: 15px; 
+}
+.received{
+    width: 170px;
+    border-radius: 12px;
+    padding: 6px;
+    background-color: white;
+    align-self: flex-start;
+    margin-bottom: 15px;
 }

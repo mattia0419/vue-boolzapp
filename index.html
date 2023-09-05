@@ -54,9 +54,10 @@
                     <div class="ms-3">
                         <h6>{{ contact.name }}</h6>
                         <span>Ultimo messaggio inviato</span>
+                    </div>
+                    <div>
                         <span class="time">12:00</span>
                     </div>
-                       
                 </div>
             </div>
         </div>
@@ -73,12 +74,16 @@
                     <i class="fa-solid fa-ellipsis-vertical fa-lg me-3 gray"></i>                
                 </div>
             </div>
-            <div class="chat-screen">
-                
+            <div class="chat-screen d-flex flex-column p-5">
+                <div :class="(message.status == 'sent') ? 'sent' : 'received'" v-for="(message,indexMessage) in contacts[activeContact].messages" class="d-flex">
+                    <div class="message" >
+                        <span >{{ message.message }} </span>
+                    </div>
+                </div>
             </div>
             <div class="write-message d-flex align-items-center justify-content-between px-5">
                 <i class="fa-regular fa-face-smile fa-xl gray"></i>
-                <input class="message-bar" type="text" style="width: 550px;" placeholder="Scrivi un messaggio">
+                <input class="message-bar" type="text" style="width: 550px;" placeholder="Scrivi un messaggio" v-model="newMessage.message" @keyUp.enter="sendNewMessage()">
                 <i class="fa-solid fa-microphone fa-xl gray"></i>
             </div>
         </div>
