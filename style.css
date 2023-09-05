@@ -177,3 +177,11 @@ img{
     align-self: flex-start;
     margin-bottom: 15px;
 }
+.dropdown{
+    width: 50px;
+    height: 30px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}

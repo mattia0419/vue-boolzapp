@@ -79,9 +79,12 @@
                 </div>
             </div>
             <div class="chat-screen d-flex flex-column p-5">
-                <div :class="(message.status == 'sent') ? 'sent' : 'received'" v-for="(message,indexMessage) in contacts[activeContact].messages" class="d-flex">
-                    <div class="message" >
-                        <span >{{ message.message }} </span>
+                <div id="mess" :class="(message.status == 'sent') ? 'sent' : 'received'" v-for="(message,indexMessage) in contacts[activeContact].messages" class="d-flex">
+                    <div  class="message" >
+                        <span >{{ message.message }} 
+                            <i @click="dropdown()" id="delete-button" class="fa-solid fa-caret-down"></i>
+                            <span @click="deleteMessage()" id="del" class="dropdown d-none">delete</span>
+                        </span>
                     </div>
                 </div>
             </div>

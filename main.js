@@ -205,6 +205,17 @@ createApp({
                     this.contacts[i].visible = false;
                 }
             }
+        },
+        dropdown(){
+            console.log("si");
+            const del = document.getElementById("del");
+            del.classList.remove("d-none");
+        },
+        deleteMessage(){
+            const mess = document.getElementById("mess");
+            mess.classList.add("d-none");
+            const del = document.getElementById("del");
+            del.classList.add("d-none");
         }
         
     }
